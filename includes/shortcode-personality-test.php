@@ -125,12 +125,4 @@ add_shortcode('personality_test', function($atts) {
     return ob_get_clean();
 });
 
-// Injection Material UI et Roboto uniquement sur pages avec le shortcode
-add_action('wp_head', function() {
-    global $post;
-    if (is_a($post, 'WP_Post') && has_shortcode($post->post_content, 'personality_test')) {
-        echo '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.14.17/dist/material.min.css">';
-        echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">';
-        echo '<style>.mui-btn{font-family:Roboto,sans-serif;font-size:1.05em;}</style>';
-    }
-});
+

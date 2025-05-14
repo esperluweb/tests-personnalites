@@ -44,6 +44,7 @@ function tp_render_test_metabox($post) {
             'results' => []
         ];
     }
+    wp_nonce_field('tp_save_test', 'tp-test-nonce');
     ?>
     <div id="tp-metabox-root">
         <h4>Questions</h4>
@@ -67,8 +68,17 @@ function tp_render_test_metabox($post) {
 add_action('save_post_personality_test', function($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     if (!current_user_can('edit_post', $post_id)) return;
-    if (isset($_POST['tp-test-data'])) {
+    if (
+        isset($_POST['tp-test-data']) &&
+        isset($_POST['tp-test-nonce']) &&
+        wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['tp-test-nonce'])), 'tp_save_test')
+    ) {
+        // On unslash, on sanitize puis on valide la donnée JSON (Plugin Check OK)
+        $raw = sanitize_textarea_field(wp_unslash($_POST['tp-test-data']));
+        $decoded = json_decode($raw, true);
+        $safe_json = (is_array($decoded)) ? json_encode($decoded) : json_encode(['questions'=>[], 'results'=>[]]);
+        // Sanitation et validation des données avant enregistrement
         delete_post_meta($post_id, '_tp_test_data');
-        add_post_meta($post_id, '_tp_test_data', wp_slash($_POST['tp-test-data']));
+        add_post_meta($post_id, '_tp_test_data', $safe_json);
     }
 });

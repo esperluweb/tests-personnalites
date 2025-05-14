@@ -34,6 +34,6 @@ add_filter('manage_personality_test_posts_columns', function($columns) {
 });
 add_action('manage_personality_test_posts_custom_column', function($column, $post_id) {
     if ($column === 'tp_shortcode') {
-        echo '<code>[personality_test id="'.$post_id.'"]</code>';
+        echo '<code>[personality_test id="' . esc_attr($post_id) . '"]</code>';
     }
 }, 10, 2);

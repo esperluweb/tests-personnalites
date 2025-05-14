@@ -1,16 +1,17 @@
-=== Mon Plugin ===
+=== Tests Personnalités ===
 Contributors: esperluweb
 Tags: tests, personnalités, quiz
 Requires at least: 6.0
-Tested up to: 6.8.1
+Tested up to: 6.8
 Requires PHP: 8.0
 Stable tag: 1.1.0
-License: GPLv2 or later
+License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Créez et gérez facilement des tests de personnalité dynamiques sur votre site WordPress.
 
 == Description ==
+
 Tests Personnalités est une extension WordPress qui vous permet de créer, personnaliser et afficher des tests de personnalité interactifs directement depuis l’interface d’administration. 
 
 - Créez des tests avec plusieurs questions, réponses et règles de résultats via une metabox intuitive.
