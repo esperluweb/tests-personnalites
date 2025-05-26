@@ -4,7 +4,7 @@ Tags: tests, personnalités, quiz
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 8.0
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,12 @@ Idéal pour les sites de coaching, blogs, magazines, ou toute plateforme souhait
 2. Activez-le
 
 == Changelog ==
+
+= 1.2.0 =
+* chargement différencié du CSS/JS
+* ajout d'une sécurité sur les fichiers PHP
+* ajout d'infos dans le header principal du plugin
+
 = 1.1.0 =
 * Ajout de la metabox
 * Ajout de la shortcode

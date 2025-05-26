@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Déclaration du Custom Post Type "personality_test"
 add_action('init', function() {
     $labels = array(

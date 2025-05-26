@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit;
 // Enqueue du JS de la metabox uniquement sur personality_test
 add_action('admin_enqueue_scripts', function($hook) {
     if ($hook === 'post-new.php' || $hook === 'post.php') {
@@ -52,6 +53,7 @@ function tp_render_test_metabox($post) {
         <button type="button" class="button" onclick="tpAddQuestion()">Ajouter une question</button>
         <hr>
         <h4>Règles de résultats</h4>
+        <p style="font-size:13px;color:#666;margin-top:-10px;margin-bottom:10px;">Précision : les intervalles min/max sont <strong>inclusifs</strong> (ex : 0 à 2 inclut aussi 0 et 2).</p>
         <div id="tp-results"></div>
         <button type="button" class="button" onclick="tpAddResult()">Ajouter une règle de résultat</button>
         <input type="hidden" id="tp-test-data" name="tp-test-data" value='<?php echo esc_attr(json_encode($data)); ?>'>

@@ -1,0 +1,45 @@
+/* Styles principaux pour le test de personnalité */
+.tp-personality-test {
+  max-width: 500px;
+  margin: 2em auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  padding: 2em;
+}
+@media (max-width:600px) {
+  .tp-personality-test { padding: 1em; }
+}
+.tp-fadein { animation: tp-fadein .35s; }
+.tp-fadeout { animation: tp-fadeout .2s; }
+@keyframes tp-fadein { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tp-fadeout { from { opacity: 1; } to { opacity: 0; } }
+.tp2-btn {
+  display:block;
+  width:100%;
+  margin:6px 0;
+  padding:10px;
+  border:none;
+  border-radius:6px;
+  background:#1c8adb;
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  transition:background 0.2s, color 0.2s;
+}
+.tp2-btn-outline {
+  background:#fff;
+  color:#1c8adb;
+  border:1px solid #1c8adb;
+  font-size:15px;
+  padding:10px;
+  border-radius:6px;
+  width:100%;
+  cursor:pointer;
+  margin-top:8px;
+  transition:background 0.2s, color 0.2s;
+}
+.tp2-btn-outline:hover {
+  background:#eaf6ff;
+  color:#176bb5;
+}
