@@ -14,7 +14,7 @@ add_shortcode('personality_test', function($atts) {
     ob_start();
     ?>
     <div class="tp-personality-test">
-        <div id="tp2-data" data-test='<?php echo json_encode($data); ?>' data-container="<?php echo esc_attr($container_id); ?>"></div>
+        <div id="tp2-data" data-test='<?php echo esc_attr( wp_json_encode($data) ); ?>' data-container="<?php echo esc_attr($container_id); ?>"></div>
         <div id="<?php echo esc_attr($container_id); ?>-question"></div>
         <div id="<?php echo esc_attr($container_id); ?>-buttons"></div>
         <div id="<?php echo esc_attr($container_id); ?>-result"></div>

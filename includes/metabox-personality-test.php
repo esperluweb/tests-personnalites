@@ -21,14 +21,14 @@ add_action('add_meta_boxes', function() {
     add_meta_box(
         'tp_test_meta',
         'Questions et Résultats',
-        'tp_render_test_metabox',
+        'testpe_render_test_metabox',
         'personality_test',
         'normal',
         'high'
     );
 });
 
-function tp_render_test_metabox($post) {
+function testpe_render_test_metabox($post) {
     $raw = get_post_meta($post->ID, '_tp_test_data', true);
     $data = stripslashes($raw);
     $json_ok = false;
@@ -58,11 +58,7 @@ function tp_render_test_metabox($post) {
         <button type="button" class="button" onclick="tpAddResult()">Ajouter une règle de résultat</button>
         <input type="hidden" id="tp-test-data" name="tp-test-data" value='<?php echo esc_attr(json_encode($data)); ?>'>
     </div>
-    <style>
-        #tp-metabox-root input[type=text] { width: 60%; margin-bottom: 4px; }
-        #tp-metabox-root input[type=number] { margin-bottom: 4px; }
-        #tp-metabox-root .button { margin-top: 5px; }
-    </style>
+
     <?php
 }
 

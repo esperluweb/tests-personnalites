@@ -43,3 +43,13 @@
   background:#eaf6ff;
   color:#176bb5;
 }
+
+#tp-metabox-root input[type=text] { 
+  width: 60%; margin-bottom: 4px; 
+}
+#tp-metabox-root input[type=number] {
+  margin-bottom: 4px; 
+}
+#tp-metabox-root .button { 
+  margin-top: 5px; 
+}
